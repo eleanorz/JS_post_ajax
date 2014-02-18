@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>JS Typing</title>
+	<style>
+		body 
+		{
+			background-color:#142C54;
+			font-family: monospace;
+			color:#57C40F;
+			font-size:50px;
+		}
+	</style>
+	<script>
+	 	function random_num(x)
+	 	{
+	 		var n = Math.floor((Math.random()*x) + 1); //generates a random number between 1 and x
+	 		return n;
+	 	}
+
+	</script>
+</head>
+<body>
+
+	<div id='stage'>
+		<svg width="100" height="100">
+	  		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+		</svg>		
+	</div>
+		
+
+
+	<script>
+		el = document.getElementById('stage');
+
+		function drawCircle()
+		{
+			el.innerHTML += 'meeep';
+		}
+
+		// document.onclick = function(e) {console.log(e); };
+
+
+		//e probably represents a mouse event?
+		//MouseEvent {dataTransfer: null, toElement: body, fromElement: null, y: 41, x: 345…}
+
+		document.onclick = function()
+		{
+			drawCircle();
+		}
+
+	</script>
+
+</body>
+
+</html>
