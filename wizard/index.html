@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>Introduction to Callbacks</title>
+ <script>
+  // declare the wizard
+  var wizard = {
+   // wizard attributes:
+   health: 500,
+   mana: 500,
+   // wizard spells:
+   spells: {
+    open_sesame: {mana_cost: 10},
+    chain_lightning: {mana_cost: 20},
+    fireball: {mana_cost: 30}
+   },
+   // wizard abilities
+   cast_spell: function(spell, callback) {
+    // declare caster to be available for the callback function below
+    var caster = this;
+    // decrease the wizard's mana with a success rate of 80% and execute the callback function and pass a caster parameter that gets the wizard who casted a spell
+   }
+  }
+ </script>
+</head>
+<body>
+</body>
+</html>

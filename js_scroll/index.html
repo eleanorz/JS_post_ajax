@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>JS Typing</title>
+	<style>
+		body 
+		{
+			background-color:#142C54;
+			font-family: monospace;
+			color:#57C40F;
+			font-size:50px;
+			text-align: center;
+			margin-top:20%;
+		}
+
+		#magic{
+			color: #777;
+			border-right: 1px solid #777;
+			padding-right: 7px;
+			display: inline;
+		}
+	</style>
+</head>
+<body>
+
+	Seattle is<div id="magic"></div>
+
+	<script>
+
+		var words = [" fun", " exciting", " singing in the rain", " cheering the Seahawks!", " good coffee", " the Space Needle", " Monorail!", " Jimi Hendrix", " Microsoft", " houseboats"],
+			el = document.getElementById('magic'),
+			word_counter = 0,
+			character_counter = 0;
+
+		for (var i = 0; i < words.length; i++) {
+			words[i] = words[i].replace(/ /g, String.fromCharCode(160));
+		}
+		//replaces spaces with an actual char code?
+
+		function updateText()
+		{
+			if(character_counter == words[word_counter].length) //means that end of word
+			{
+				el.innerHTML = '';  //set the html to be blank after typing out phrase
+				word_counter++; 	//choose a different phrase
+				character_counter = 0;	//start over with the first character of the phase
+
+				//if we're displaying the last word, loop to the first word
+				if(word_counter == words.length)
+					word_counter = 0;
+			}
+
+			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+			//progressively appends a character to each existing html text, cursor is created by right border of the div
+		}
+
+		setInterval(updateText,240); //loops through updateText continuously
+
+	</script>
+
+</body>
+
+</html>
