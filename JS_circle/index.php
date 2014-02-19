@@ -33,17 +33,21 @@
 	<script>
 		el = document.getElementById('stage');
 
-		function drawCircle()
+		function drawCircle(e)
 		{
 			var cx = random_num(50);
 			var cy = random_num(50);
 			var r = random_num(40);
 			var thing = 
 				"<svg width='100' height='100'>" +
-	  				"<circle cx = '"+cx+"' cy='50' r='40' stroke = 'green' fill = 'pink' />" +
+	  				"<circle cx = '"+cx+"' cy='"+cy+"' r='"+r+"' stroke = 'green' fill = 'pink' />" +
 				"</svg>";
 
 				// "<div id='test'>hi</div>";
+			// el.innerHTML += MouseEvent.x;
+			console.log(e);
+			console.log(e.y);
+			console.log(e.x);
 				
 			el.innerHTML += thing;
 		}
@@ -54,9 +58,9 @@
 		//e probably represents a mouse event?
 		//MouseEvent {dataTransfer: null, toElement: body, fromElement: null, y: 41, x: 345…}
 
-		document.onclick = function()
+		document.onclick = function(e)
 		{
-			drawCircle();
+			drawCircle(e);
 		}
 
 	</script>
